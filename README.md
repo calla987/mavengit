@@ -19,16 +19,16 @@ The final tag/release code contains version -SNAPSHOT.
 Upgrade release and scm-provider to fix the -SNAPSHOT issue.
 
 <pre>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-release-plugin</artifactId>
-                <version>2.5.2</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.apache.maven.scm</groupId>
-                        <artifactId>maven-scm-provider-gitexe</artifactId>
-                        <version>1.9.4</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+                &lt;artifactId&gt;maven-release-plugin&lt;/artifactId&gt;
+                &lt;version&gt;2.5.2&lt;/version&gt;
+                &lt;dependencies&gt;
+                    &lt;dependency&gt;
+                        &lt;groupId&gt;org.apache.maven.scm&lt;/groupId&gt;
+                        &lt;artifactId&gt;maven-scm-provider-gitexe&lt;/artifactId&gt;
+                        &lt;version&gt;1.9.4&lt;/version&gt;
+                    &lt;/dependency&gt;
+                &lt;/dependencies&gt;
+            &lt;/plugin&gt;
 </pre>
