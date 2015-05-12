@@ -3,7 +3,7 @@
 
     <groupId>nl.tjonahen.maven</groupId>
     <artifactId>mavengit</artifactId>
-    <version>1.2-SNAPSHOT</version>
+    <version>1.2</version>
     <packaging>jar</packaging>
 
     <name>mavengit</name>
@@ -12,7 +12,7 @@
         <connection>scm:git:https://github.com/pnmtjonahen/mavengit</connection>
         <developerConnection>scm:git:https://github.com/pnmtjonahen/mavengit</developerConnection>
         <url>https://github.com/pnmtjonahen/mavengit</url>
-        <tag>HEAD</tag>
+        <tag>mavengit-1.2</tag>
     </scm>
     <build>
         <plugins>
