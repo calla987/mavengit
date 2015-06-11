@@ -32,3 +32,5 @@ Upgrade release and scm-provider to fix the -SNAPSHOT issue.
                 &lt;/dependencies&gt;
             &lt;/plugin&gt;
 </pre>
+
+also added some JGit integration code
