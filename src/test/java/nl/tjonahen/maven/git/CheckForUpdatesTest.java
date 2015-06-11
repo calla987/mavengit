@@ -31,7 +31,9 @@ public class CheckForUpdatesTest {
     public void testExecute() throws IOException, GitAPIException {
         final CheckForUpdates sut = new CheckForUpdates();
         
-        sut.execute("/home/ordina/tmp/mavengit");
+        if (sut.execute("/home/ordina/tmp/mavengit")) {
+            System.out.println("Refresh is needed......");
+        }
     }
     
 }

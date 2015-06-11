@@ -19,6 +19,8 @@ package nl.tjonahen.maven.git;
 import java.io.File;
 import java.io.IOException;
 import org.eclipse.jgit.api.Git;
+import org.eclipse.jgit.api.MergeResult;
+import org.eclipse.jgit.api.MergeResult.MergeStatus;
 import org.eclipse.jgit.api.PullResult;
 import org.eclipse.jgit.api.errors.GitAPIException;
 
@@ -28,11 +30,22 @@ import org.eclipse.jgit.api.errors.GitAPIException;
  */
 public class CheckForUpdates {
 
-    public void execute(String repo) throws IOException, GitAPIException {
-        
-        
-        final PullResult result = Git.open(new File(repo)).pull().call();
-        
-        System.out.println("Messages : " + result.getFetchResult().getMessages());
+    public boolean execute(String repo) throws IOException, GitAPIException {
+
+        return refreshNeeded(Git.open(new File(repo)).pull().call());
+    }
+
+    private boolean refreshNeeded(PullResult pullResult) {
+        if (pullResult == null) {
+            return true;
+        }
+        MergeResult mergeResult = pullResult.getMergeResult();
+        if (mergeResult == null) {
+            return true;
+        }
+        if (mergeResult.getMergeStatus() == MergeStatus.ALREADY_UP_TO_DATE) {
+            return false;
+        }
+        return true;
     }
 }
